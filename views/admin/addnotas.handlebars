@@ -1,0 +1,14 @@
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{/each}}
+
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/notas/nova" method="POST">
+            <label for="content">Conteúdo:</label>
+            <textarea id="content" name="content" placeholder="Conteúdo da nota" class="form-control"></textarea>
+            <br>
+            <button type="submit" class="btn btn-success">Criar Nota</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<h2>Notas:</h2>
+<hr>
+<a href="/admin/notas/add"><button class="btn btn-success">Nova Nota</button></a>
+
+{{#each notas}}
+    <div class="card mt-4">
+        <div class="card-body d-flex justify-content-between">
+            <div>
+                <h4>{{this.nome}}</h4>
+                <small>Conteúdo: {{this.content}}</small><br>
+                <small>Data de criação: {{timestamp}}</small><br>
+            </div>
+            <div class="btn-group">
+                <a href="/admin/notas/edit/{{this._id}}"><button class="btn btn-success">Editar nota</button></a>
+                <div style="width: 10px;"></div>
+                <form action="/admin/notas/deletar" method="POST">
+                    <input type="hidden" name="id" value="{{_id}}">
+                    <button type="submit" class="btn btn-danger">Deletar nota</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <p>Nenhuma nota encontrada.</p>
+{{/each}}

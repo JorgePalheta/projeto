@@ -1,0 +1,18 @@
+{{#if erros}}
+    {{#each erros}}
+        <div class="alert alert-danger">{{texto}}</div>
+    {{/each}}
+{{else}}
+    <h3>Editar Nota:</h3>
+    <div class="card">
+        <div class="card-body">
+            <form action="/admin/notas/edit" method="POST">
+                <input type="hidden" name="id" value="{{notas._id}}">
+                <label for="content">Conteúdo:</label>
+                <input type="text" id="content" name="content" placeholder="Conteúdo da nota" class="form-control" value="{{notas.content}}">
+                <br>
+                <button type="submit" class="btn btn-success">Editar Nota</button>
+            </form>
+        </div>
+    </div>
+{{/if}}
